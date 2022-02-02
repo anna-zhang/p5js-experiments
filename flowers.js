@@ -11,13 +11,13 @@ function drawFlower(x, y) {
 	push();
 	translate(x, y);
 	noStroke();
-	fill('white'); // white petals
-	let numPetals = 9; // number of flower petals per flower
+	fill(random(['white', 'lavender', 'mistyrose', 'lightcyan', 'lemonchiffon', 'lightpink', 'thistle'])); // vary petal colors
+	let numPetals = int(random(8, 20)); // vary number of flower petals
   	for (let i = 0; i < numPetals; i ++) {
         ellipse(0, 40, 20, 80); // draw petal
         rotate(TWO_PI / numPetals);
   	}
-	fill('orange'); // orange center
-	ellipse(0, 0, 30, 30); 
+	fill(random(['orange', 'gold', 'coral'])); // vary color of center
+	ellipse(0, 0, 4 * numPetals, 4 * numPetals); // vary size of center depending on number of petals
 	pop();
 }
